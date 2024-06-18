@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-// Compatible with OpenZeppelin Contracts ^5.0.0
 pragma solidity ^0.8.20;
 
 import "./ERC20Item.sol";
@@ -35,8 +34,8 @@ contract GenerationAssets {
         emit ERC721Created(msg.sender, tokenAddress);
     }
 
-    function createERC1155(address to, uint256 mintAmount, string memory baseURI_, bytes memory data) external {
-        ERC1155Item newToken = new ERC1155Item(to, mintAmount, baseURI_, data);
+    function createERC1155(address to, string memory tokenName, string memory tokenSymbol, uint256 mintAmount, string memory baseURI_, bytes memory data) external {
+        ERC1155Item newToken = new ERC1155Item(to, tokenName, tokenSymbol, mintAmount, baseURI_, data);
         address tokenAddress = address(newToken);
         userContracts[msg.sender].push(tokenAddress);
 
