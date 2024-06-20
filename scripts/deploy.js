@@ -1,15 +1,15 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-const GenerationContract = await ethers.getContractFactory("EasyNft");
-const generationContract = await GenerationContract.deploy();
+const GeneratorContract = await ethers.getContractFactory("generator");
+const generatorContract = await GeneratorContract.deploy();
 
-await generationContract.waitForDeployment();
-const tx = await generationContract.deploymentTransaction();
+await generatorContract.waitForDeployment();
+const tx = await generatorContract.deploymentTransaction();
 
 console.log("Contract deployed successfully.");
-console.log(`Deployer: ${generationContract.runner.address}`);
-console.log(`Deployed to: ${generationContract.target}`);
+console.log(`Deployer: ${generatorContract.runner.address}`);
+console.log(`Deployed to: ${generatorContract.target}`);
 console.log(`Transaction hash: ${tx.hash}`);
 }
 
