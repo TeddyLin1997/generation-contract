@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-const GeneratorContract = await ethers.getContractFactory("generator");
+const GeneratorContract = await ethers.getContractFactory("Generator");
 const generatorContract = await GeneratorContract.deploy();
 
 await generatorContract.waitForDeployment();

@@ -5,7 +5,7 @@ import "./ERC20Item.sol";
 import "./ERC721Item.sol";
 import "./ERC1155Item.sol";
 
-contract GenerationAssets {
+contract Generator {
     mapping(address => address[]) public userContracts;
 
 
